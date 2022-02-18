@@ -13,4 +13,4 @@ Run with:
 uvicorn main:app --reload
 ```
 
-Requiest scan by requesting url `http://localhost:8000/scan/<DOMAIN_TO_SCAN>`
+Request scan by requesting url `http://localhost:8000/scan/<DOMAIN_TO_SCAN>`
