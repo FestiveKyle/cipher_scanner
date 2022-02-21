@@ -1,4 +1,5 @@
 import json
+import enum
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -8,7 +9,9 @@ import dns.resolver
 
 
 def todict(obj, classkey=None):
-    if isinstance(obj, dict):
+    if isinstance(obj, enum.Enum):
+        return obj
+    elif isinstance(obj, dict):
         data = {}
         for (k, v) in obj.items():
             data[k] = todict(v, classkey)
