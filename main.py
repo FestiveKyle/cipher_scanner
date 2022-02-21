@@ -9,7 +9,9 @@ import dns.resolver
 
 
 def todict(obj, classkey=None):
-    if isinstance(obj, enum.Enum):
+    if obj.__class__.__name__ == "TlsVersionEnum":
+        return obj.name
+    elif isinstance(obj, enum.Enum):
         return obj
     elif isinstance(obj, dict):
         data = {}
